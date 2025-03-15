@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout - Agro Farm</title>
+  <link rel="stylesheet" href="checkout.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <p>Agro Farm - Your Farming Partner!</p>
+    </div>
+    <div class="top-bar-right">
+      <select id="language">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+      </select>
+      <a href="account.html"><i class="fas fa-user"></i> My Account</a>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <a href="frontend.html">
+        <img src="images/logo1.png" alt="Agro Farm Logo" class="logo-img">
+      </a>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search seeds, pesticides, and more">
+      <button><i class="fas fa-search"></i></button>
+    </div>
+    <ul>
+      <li><a href="frontend.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart (<span id="cart-count">0</span>)</a></li>
+    </ul>
+  </nav>
+
+  <!-- Checkout Section -->
+  <section class="checkout">
+    <h2>Checkout</h2>
+
+    <!-- Customer Details Section -->
+    <div class="checkout-form" id="customer-details">
+      <h3>Customer Details</h3>
+      <form id="customer-form">
+        <label for="name">Full Name:</label>
+        <input type="text" id="name" required>
+        <label for="email">Email:</label>
+        <input type="email" id="email" required>
+        <label for="phone">Phone:</label>
+        <input type="tel" id="phone" required>
+        <label for="address">Address:</label>
+        <textarea id="address" required></textarea>
+      </form>
+    </div>
+
+    <!-- Order Summary Section -->
+    <div class="checkout-form" id="order-summary">
+      <h3>Order Summary</h3>
+      <div class="cart-items" id="checkout-cart-items">
+        <!-- Cart items will be dynamically added here -->
+      </div>
+      <div class="cart-summary">
+        <p>Total Items: <span id="checkout-total-items">0</span></p>
+        <p>Subtotal: ₹<span id="checkout-subtotal">0</span></p>
+        <p>GST (18%): ₹<span id="checkout-gst">0</span></p>
+        <p>Discount: ₹<span id="checkout-discount">0</span></p>
+        <p>Total Price: ₹<span id="checkout-total-price">0</span></p>
+      </div>
+    </div>
+
+    <!-- Payment Section -->
+    <div class="checkout-form" id="payment">
+      <h3>Payment</h3>
+      <div class="payment-options">
+        <label>
+          <input type="radio" name="payment" value="upi" checked> UPI
+        </label>
+        <label>
+          <input type="radio" name="payment" value="credit-card"> Credit Card
+        </label>
+        <label>
+          <input type="radio" name="payment" value="cod"> Cash on Delivery
+        </label>
+      </div>
+
+      <!-- UPI Payment Form -->
+      <div id="upi-form" class="payment-form">
+        <label for="upi-id">UPI ID:</label>
+        <input type="text" id="upi-id" placeholder="Enter your UPI ID" required>
+      </div>
+
+      <!-- Credit Card Payment Form -->
+      <div id="credit-card-form" class="payment-form" style="display: none;">
+        <label for="card-number">Card Number:</label>
+        <input type="text" id="card-number" placeholder="Enter card number" required>
+        <label for="expiry-date">Expiry Date:</label>
+        <input type="text" id="expiry-date" placeholder="MM/YY" required>
+        <label for="cvv">CVV:</label>
+        <input type="text" id="cvv" placeholder="Enter CVV" required>
+      </div>
+
+      <!-- COD Payment Form -->
+      <div id="cod-form" class="payment-form" style="display: none;">
+        <p>Pay cash when your order is delivered.</p>
+      </div>
+
+      <button type="button" onclick="placeOrder()">Place Order</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2023 Agro Farm. All rights reserved.</p>
+  </footer>
+
+  <script src="checkout.js"></script>
+</body>
+</html>

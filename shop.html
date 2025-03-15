@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop - Agro Farm</title>
+  <link rel="stylesheet" href="shop.css">
+  <link rel="stylesheet" href="chatbot.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+  <!-- Top Bar -->
+  <div class="top-bar">
+    <div class="top-bar-left">
+      <p>Agro Farm - Your Farming Partner!</p>
+    </div>
+    <div class="top-bar-right">
+      <select id="language">
+        <option value="en">English</option>
+        <option value="hi">Hindi</option>
+      </select>
+      <a href="account.html"><i class="fas fa-user"></i> My Account</a>
+    </div>
+  </div>
+
+  <!-- Navbar -->
+  <nav>
+    <div class="logo">
+      <a href="frontend.html">
+        <img src="images/logo1.png" alt="Agro Farm Logo" class="logo-img">
+      </a>
+    </div>
+    <div class="search-bar">
+      <input type="text" placeholder="Search seeds, pesticides, and more">
+      <button><i class="fas fa-search"></i></button>
+    </div>
+    <ul>
+      <li><a href="frontend.html">Home</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="about.html">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="#"><i class="fas fa-shopping-cart"></i> Cart</a></li>
+    </ul>
+  </nav>
+
+  <!-- Filter by Category Section -->
+  <section class="filter-section">
+    <h2>Filter by Category</h2>
+    <div class="filter-grid">
+      <button class="filter-btn active" data-category="all">
+        <img src="images/all.jpeg" alt="All">
+        <span>All</span>
+      </button>
+      <button class="filter-btn" data-category="vegetable & fruit seeds">
+        <img src="images/seeds.jpg" alt="Seeds">
+        <span>Vegetable & Fruit Seeds</span>
+      </button>
+      <button class="filter-btn" data-category="Farm machinery">
+        <img src="images/farm machinery.avif" alt="Farm Machinery">
+        <span>Farm Machinery</span>
+      </button>
+      <button class="filter-btn" data-category="insecticides">
+        <img src="images/insecticide.avif" alt="Insecticides">
+        <span>Insecticides</span>
+      </button>
+      <button class="filter-btn" data-category="crop nutrients">
+        <img src="images/crop nutrient.avif" alt="Crop Nutrients">
+        <span>Crop Nutrients</span>
+      </button>
+    </div>
+  </section>
+
+  <!-- All Products Section -->
+  <section class="all-products">
+    <h2>All Products</h2>
+    <div class="product-grid">
+      <div class="product-card" data-category="vegetable & fruit seeds" data-product-id="organic-tomatoes">
+        <img src="images/tomatoes.jpg" alt="Product 1">
+        <h3>Organic Tomatoes</h3>
+        <p>₹50/kg</p>
+        <button onclick="redirectToProduct('organic-tomatoes')">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="vegetable & fruit seeds" data-product-id="avocado-seed">
+        <img src="images/avocado seed.jpg" alt="Product 2">
+        <h3>Avocado Seed</h3>
+        <p>₹30/kg</p>
+        <button onclick="redirectToProduct('avocado-seed')">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Farm machinery" data-product-id="agri-car">
+        <img src="images/agri car.jpg" alt="Product 3">
+        <h3>Agri Car</h3>
+        <p>₹520</p>
+        <button onclick="redirectToProduct('agri-car')">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="insecticides" data-product-id="pesticides">
+        <img src="images/pesticides.jpg" alt="Product 4">
+        <h3>Pesticides</h3>
+        <p>₹60/ml</p>
+        <button onclick="redirectToProduct('pesticides')">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="vegetable & fruit seeds" data-product-id="marigold-seeds">
+        <img src="images/marigold seeds.avif" alt="Product 5">
+        <h3>Marigold Seeds</h3>
+        <p>₹660/kg</p>
+        <button onclick="redirectToProduct('marigold-seeds')">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Farm machinery" data-product-id="akadi-sickle">
+        <img src="images/akadi sickle.avif" alt="Product 6">
+        <h3>Sickle</h3>
+        <p>₹250</p>
+        <button onclick="redirectToProduct('akadi-sickle')">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Farm machinery" data-product-id="knapsack-sprayer">
+        <img src="images/knapsack sprayer.avif" alt="Product 7">
+        <h3>Farm Sprayer</h3>
+        <p>₹1350</p>
+        <button onclick="redirectToProduct('knapsack-sprayer')">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="Farm machinery" data-product-id="hand-weeder">
+        <img src="images/hand weeder.avif" alt="Product 8">
+        <h3>2 in 1 Hand Weeder</h3>
+        <p>₹450</p>
+        <button onclick="redirectToProduct('hand-weeder')">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="vegetable & fruit seeds" data-product-id="tomato-seeds">
+        <img src="images/tomato seeds.avif" alt="Product 9">
+        <h3>Tomato Seeds</h3>
+        <p>₹500/kg</p>
+        <button onclick="redirectToProduct('tomato-seeds')">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="vegetable & fruit seeds" data-product-id="coriander-seeds">
+        <img src="images/coriander seeds.avif" alt="Product 10">
+        <h3>Coriander Seeds</h3>
+        <p>₹449/kg</p>
+        <button onclick="redirectToProduct('coriander-seeds')">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="vegetable & fruit seeds" data-product-id="pumpkin-seeds">
+        <img src="images/pumpkin seeds.avif" alt="Product 11">
+        <h3>Pumpkin Seeds</h3>
+        <p>₹660/kg</p>
+        <button onclick="redirectToProduct('pumpkin-seeds')">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="vegetable & fruit seeds" data-product-id="beetroot-seeds">
+        <img src="images/beetroot seeds.avif" alt="Product 12">
+        <h3>Beetroot Seeds</h3>
+        <p>₹770/kg</p>
+        <button onclick="redirectToProduct('beetroot-seeds')">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="insecticides" data-product-id="coragen-insecticide">
+        <img src="images/coragen insecticide.avif" alt="Product 13">
+        <h3>Coragen Insecticide</h3>
+        <p>₹150</p>
+        <button onclick="redirectToProduct('coragen-insecticide')">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="insecticides" data-product-id="pegasus-insecticide">
+        <img src="images/pegasus insecticide.avif" alt="Product 14">
+        <h3>Pegasus Insecticide</h3>
+        <p>₹349</p>
+        <button onclick="redirectToProduct('pegasus-insecticide')">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="insecticides" data-product-id="tafgor-insecticide">
+        <img src="images/tafgor insecticide.avif" alt="Product 15">
+        <h3>Tafgor Insecticide</h3>
+        <p>₹670</p>
+        <button onclick="redirectToProduct('tafgor-insecticide')">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="crop nutrients" data-product-id="liquid-bio-fertilizer">
+        <img src="images/biovita liquid bio fertilizer.avif" alt="Product 16">
+        <h3>Liquid Bio Fertilizer</h3>
+        <p>₹200/ltr</p>
+        <button onclick="redirectToProduct('liquid-bio-fertilizer')">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="crop nutrients" data-product-id="flower-booster">
+        <img src="images/flower booster.avif" alt="Product 17">
+        <h3>Flower Growth Booster</h3>
+        <p>₹600/kg</p>
+        <button onclick="redirectToProduct('flower-booster')">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="crop nutrients" data-product-id="plant-growth-promoter">
+        <img src="images/plant growth promoter.avif" alt="Product 18">
+        <h3>Plant Growth Promoter</h3>
+        <p>₹150/100ml</p>
+        <button onclick="redirectToProduct('plant-growth-promoter')">Add to Cart</button>
+      </div>
+      <div class="product-card" data-category="crop nutrients" data-product-id="sulphur-liquid-fertilizer">
+        <img src="images/sulphur liquid fertilizer.avif" alt="Product 19">
+        <h3>Sulphur Liquid Fertilizer</h3>
+        <p>₹560/ltr</p>
+        <button onclick="redirectToProduct('sulphur-liquid-fertilizer')">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Chat Bot -->
+  <div class="chatbot-container">
+    <div class="chatbot-icon" onclick="toggleChatbot()">
+      <i class="fas fa-headset"></i> <!-- Headphone icon -->
+    </div>
+    <div class="chatbot-popup" id="chatbotPopup">
+      <button onclick="openWhatsApp()">
+        <i class="fab fa-whatsapp"></i> Chat with us on WhatsApp
+      </button>
+      <button onclick="openFAQ()">
+        <i class="fas fa-question-circle"></i> FAQ
+      </button>
+    </div>
+  </div>
+
+  <script src="chatbot.js"></script>
+  <script src="shop.js"></script>
+</body>
+</html>
